@@ -14,6 +14,15 @@ function makeGrid(dimensions) {
     }
 }
 
+function randomColor() {
+    let r = Math.floor((Math.random() * 256) + 1);
+    let g = Math.floor((Math.random() * 256) + 1);
+    let b = Math.floor((Math.random() * 256) + 1);
+
+    let rgb = `rgb(${r}, ${g}, ${b})`;
+    return rgb;
+}
+
 makeGrid(16);
 
 chooseGrid.addEventListener('click', () => {
@@ -27,6 +36,6 @@ chooseGrid.addEventListener('click', () => {
 
 container.addEventListener('mouseover', (e) => {
     if (e.target !== container) {
-        e.target.style.backgroundColor = "blue";
+        e.target.style.backgroundColor = randomColor();
     }
 });
